@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+    <h1>폼 관련 태그</h1>
+    <p>
+        form 태그는 html에서 사용자가 입력할 수 있는 양식을 제공하는 태그이다.<br>
+        form태그 내의 input 태그들을 통해 사용자가 입력한 정보를 **서버**로 넘기는 역할을 한다. <br>
+        <hr>
+
+        * action 속성 : 폼에 입력된 값들을 전송받을 **클래스(java) 이름**을 입력한다.<br>
+        * method 속성 : **get/post** 방식으로 전송할 방식을 지정한다. <br>
+            ** get 방식 : url주소에 form태그를 통해 넘어가는 데이터가 보인다.** <br>
+            ** post 방식 : url주소에 form태그를 통해 넘어가는 데이터가 보이지 않는다. ** <br>
+    </p>
+    <form action="search" method="get">
+        <label>검색할 내용:</label>
+        <input type="text" name="search" required placeholder="내용을 입력하세요">&nbsp;
+        <input type="submit" value="검색"> <!--둘 다 같다-->
+        <button type="submit">검색</button>
+
+    </form>
+    <p>
+        submit 버튼을 눌렀을 때 action에 지정한 경로로 method에 지정한 방식에 따라서<br>
+        input태그에 입력한 값들을 서버로 전달한다.
+    </p>
+    <h3>input태그의 여러 타입들</h3>
+    <h2>type="password"</h2>
+    <input type="password">
+    <input type="search">
+    <input type="url">
+    <input type="email">
+    <input type="tel">
+
+    <input type="color">
+    <input type="file">
+    <input type="hidden">
+
+    <select name="nation">
+        <option value="ko">한국</option>
+        <option value="ch">중국</option>
+        <option value="jp" selected>일본</option>
+        <option value="etc">기타</option>
+    </select>
+    
+    <select name="nation" size="2" multiple>
+        <option value="ko">한국</option>
+        <option value="ch">중국</option>
+        <option value="jp" selected>일본</option>
+        <option value="etc">기타</option>
+    </select>
+    <hr>
+    <form action="#">
+    <textarea cols="40" rows="10" style="resize: none;"></textarea>
+    <br>
+    <button type="submit">전송</button>&nbsp;&nbsp;&nbsp;
+    <button type="reset">초기화</button>
+    <br><br><br><br><br><br>
+    <a href="./index.html">메인으로 돌아가기</a>
+    </form>
+</body>
+</html>
