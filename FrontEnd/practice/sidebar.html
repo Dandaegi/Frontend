@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        *{
+            font-family:Pretendard-Regular ;
+        }
+        body{
+            background-color: rgb(230, 230, 230);
+        }
+        #side-bar-container {
+            background-color: white;
+            width: 300px; height: 1080px;
+        }
+        #title {
+            position: relative;
+            text-align: center;
+            top: 60px;
+            color: #414141;
+            font-size: 40px;
+            font-weight: lighter;
+        }
+        #list {
+            list-style-type: none;
+            position: relative;
+            top: 100px;
+            right: 50px;
+            text-align: right;
+        }
+        .list{
+            margin-bottom: 50px;
+            font-size: 16px;
+            color: #606060;
+        }
+        #choose-box {
+            background-color: #FA9A85;
+            width: 267px;
+            height: 71px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="side-bar-container">
+        <h1 id="title">Witty Wave</h1>
+        <ol id="list">
+            <li class="list">메일</li>
+            <li class="list">근태 관리</li>
+            <li class="list">캘린더</li>
+            <li class="list">프로젝트</li>
+            <li class="list">결재</li>
+            <li class="list">게시판</li>
+            <li class="list">조직</li>
+        </ol>
+        <div id="choose-box">
+
+        </div>
+    </div>
+
+</body>
+</html>
