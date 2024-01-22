@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }  
+    </style>
+</head>
+<body>
+    <h1>01. id를 이용한 요소 노드 취득</h1>
+    <pre>
+        <b>
+            Document.prototype.getElementById 메소드는 인자로 전달한 id(어트리뷰트)를 갖는
+            하나의 요소 노드를 탐색해서 반환한다.
+        </b>
+        문서 내에 중복된 id값을 갖는 HTML요소가 여러 개 존재해도 에러는 발생하지 않지만
+        해당 id값을 갖는 <b>첫 번째 요소</b>만 반환한다. (id를 중복으로 안두는게 낫다)
+    </pre>
+    <div id="areal" class="area">
+        div영역
+        <p id="area2">p영역</p>
+
+    </div>
+    <script>
+        //document는 html태그 위에 있는 태그라고 생각하면 편하다.
+        //document는 기본적으로 객체가 생성돼있다.
+        var 요소 = document.getElementById('areal');  //문자열로 인자 하나를 받는다.
+      
+        
+        console.log(요소);
+        
+        //여기까지 됐으면 DOM안에 id가 areal인 태그를 선택해서 area변수에 대입 된 것이다.
+        요소.style.background = 'yellow';
+        요소.style.color = 'red';
+    </script>
+</body>
+</html>

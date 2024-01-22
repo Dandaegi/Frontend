@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이벤트 핸들러</h1>
+    <pre>
+        이벤트 핸들러 : 이벤트가 발생했을 때 브라우저에 호출을 위임한 함수
+
+        onclick 어트리뷰트(속성) 안에는 JS의 함수를 호출할 수 있다.
+    </pre>
+    <button onclick="alert('클릭했네?'); console.log('클릭했구나');">클릭하세요</button>
+    <button onclick="hello()">이것도 눌러보세요</button>
+
+    <button onmouseover="doNot('정에진')">마우스를 올려보세요</button>
+    <button id="color-button" onclick="colorful()">즐거운 색칠놀이</button>
+
+    <button onclick="setBlack()">다크모드</button><!--버튼을 누르면 setBlack() 함수호출-->
+    <button onclick="setWhite()">라이트모드</button><!--버튼을 누르면 setWhite() 함수호출-->
+
+
+    <script>
+        function setBlack(){  //이 함수
+            document.querySelector('body').style.background = 'black';  //돔으로 부터 body 태그를 검색하여 스타일의 배경색을 블랙으로 만듬
+            //querySelector를 쓴 이유는 body태그에 id가 지정 안돼있기 때문에 CSS선택자로 body태그를 선택함
+            document.querySelector('pre').style.color = 'white';  //돔으로 부터 pre태그를 검색하여 나온 결과의 스타일의 배경색을 white로 바꿈
+            document.querySelector('h1').style.color = 'white';  //돔으로 부터 hl태그를 검색하여 나온 결과의 스타일으 배경색을 white로 바꿈
+        }
+        function setWhite(){
+            var backgroundBody = document.querySelector('body');  //돔으로 부터 body태그를 검색하여 나온 결과를 변수 backgroundBody에 저장함
+            var h1Text = document.querySelector('h1');
+            var preText = document.querySelector('pre');
+            backgroundBody.style.background = 'white';  //아까 검색하여 나왔던 결과를 대입한 변수에 스타일의 배경색을 white로 지정함
+            h1Text.style.color = 'black';
+            preText.style.color = 'black';
+        }
+       
+        
+        function hello(){
+            alert("안녕?");
+        }
+        function doNot(name){
+            alert(`${name}씨, 마우스를 올리지 마세요`)
+        }
+        function colorful(){
+            var $button = document.getElementById('color-button');
+            $button.style.background = 'red';
+        }
+    </script>
+</body>
+</html>

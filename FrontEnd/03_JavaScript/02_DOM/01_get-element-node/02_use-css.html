@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CSS 선택자를 이용한 요소 취득</h1>
+    <pre>
+        document.querySelcetor 메서드는 인수(인자)로 전달한 CSS선택자를 만족시키는 *하나의* 요소 노드를 반환한다.
+        만약 같은 class이름을 가진 노드를 선택하면 맨 위에 하나만 가져온다.
+        까먹은 나를 위한 복습
+        
+
+    </pre>
+    <!-- 
+        매개변수 : 함수가 받는 변수
+        전달인자(전달인수,인수,인자) : 함수를 호출하면 갖다주는 변수
+
+        <div sytle="background: red;" id="me">나는 div 태그</div> : 요소
+        div                       : 태그
+        id, style                 : 속성 (속성에 구분은 공백)
+        "background: red;" , "me" : 속성 값
+        나는 div 태그              : 내부 문자
+    --> 
+    <div class="area">
+        <p>First</p>
+
+    </div>
+
+    <div class="area">
+        <p>Second</p>
+
+    </div>
+
+    <div id="area">
+        <p>Third</p>
+    </div>
+
+    <script>
+        function id(value){
+            return document.getElementById(value);
+        }
+        
+        //document. 은 document(DOM) 안에서 자신이 작성한 CSS선택자를 바탕으로 검색을 하여
+        //CSS 선택자와 일치하는 노드를 변수에 대입한다.
+        //$ 는 대부분 요소의 class 또는 id의 이름을 변수 명으로 지정하기 때문에
+        //요소의 id 또는 class와 변수명을 헷갈리지 않기 위해 의도적으로 변수명 앞에 $ 추가한다.
+        //(js에서 변수명(var 변수명) 이랑 id,class헷갈리지 않게하기 위해)
+        var $area = document.querySelector('.area');
+        console.log($area);
+
+        var $area2 = document.querySelector('#area')
+        console.log($area2);
+        
+        var $areaText = $area.querySelector('p');
+        console.log($areaText);
+
+        var area3 = document.getElementById('area');
+        console.log(area3); //밑에꺼랑 같다
+        
+
+        var area3 = id('area');
+        console.log(area3);
+
+        
+        
+        
+    </script>
+</body>
+</html>
+
